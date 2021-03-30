@@ -1,0 +1,17 @@
+{% block body %}
+    <div id="header">
+
+    </div>
+
+    <div id="menu">
+        {{ render(controller('App\\Controller\\SandboxController::menuAction', {items: ['Accueil', 'Parcourir', 'Blog']})) }}
+    </div>
+
+    <div id="vue">
+        {% block vue %}{% endblock %}
+    </div>
+
+    <div id="footer">
+        <img src="">
+    </div>
+{% endblock %}
