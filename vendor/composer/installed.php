@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'c6003c72c47eea596d90be8216b020a741a7509a',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'c6003c72c47eea596d90be8216b020a741a7509a',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -211,12 +211,12 @@
     ),
     'laminas/laminas-code' => 
     array (
-      'pretty_version' => '4.1.0',
-      'version' => '4.1.0.0',
+      'pretty_version' => '3.4.1',
+      'version' => '3.4.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5b553c274b94af3f880cbaaf8fbab047f279a31c',
+      'reference' => '1cb8f203389ab1482bf89c0e70a04849bacd7766',
     ),
     'laminas/laminas-eventmanager' => 
     array (
@@ -270,12 +270,12 @@
     ),
     'psr/cache' => 
     array (
-      'pretty_version' => '2.0.0',
-      'version' => '2.0.0.0',
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '213f9dbc5b9bfbc4f8db86d2838dc968752ce13b',
+      'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
     ),
     'psr/cache-implementation' => 
     array (
@@ -387,13 +387,12 @@
     ),
     'symfony/cache-contracts' => 
     array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
+      'pretty_version' => 'v2.2.0',
+      'version' => '2.2.0.0',
       'aliases' => 
       array (
-        0 => '2.4.x-dev',
       ),
-      'reference' => 'c0446463729b89dd4fa62e9aeecc80287323615d',
+      'reference' => '8034ca0b61d4dd967f3698aaa1da2507b631d0cb',
     ),
     'symfony/cache-implementation' => 
     array (
@@ -934,7 +933,7 @@
     array (
       'replaced' => 
       array (
-        0 => '4.1.0',
+        0 => '3.4.1',
       ),
     ),
     'zendframework/zend-eventmanager' => 

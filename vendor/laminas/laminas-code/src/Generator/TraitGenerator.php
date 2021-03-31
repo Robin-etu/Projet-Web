@@ -15,12 +15,13 @@ use function strtolower;
 
 class TraitGenerator extends ClassGenerator
 {
-    public const OBJECT_TYPE = 'trait';
+    const OBJECT_TYPE = 'trait';
 
     /**
      * Build a Code Generation Php Object from a Class Reflection
      *
-     * @return static
+     * @param  ClassReflection $classReflection
+     * @return TraitGenerator
      */
     public static function fromReflection(ClassReflection $classReflection)
     {
@@ -49,11 +50,9 @@ class TraitGenerator extends ClassGenerator
 
         $methods = [];
         foreach ($classReflection->getMethods() as $reflectionMethod) {
-            $className     = $cg->getName();
-            $namespaceName = $cg->getNamespaceName();
-            if ($namespaceName !== null) {
-                $className = $namespaceName . '\\' . $className;
-            }
+            $className = $cg->getNamespaceName()
+                ? $cg->getNamespaceName() . '\\' . $cg->getName()
+                : $cg->getName();
             if ($reflectionMethod->getDeclaringClass()->getName() == $className) {
                 $methods[] = MethodGenerator::fromReflection($reflectionMethod);
             }
@@ -72,6 +71,7 @@ class TraitGenerator extends ClassGenerator
      * @configkey docblock       string        The docblock information
      * @configkey properties
      * @configkey methods
+     *
      * @throws Exception\InvalidArgumentException
      * @param  array $array
      * @return TraitGenerator
@@ -111,8 +111,8 @@ class TraitGenerator extends ClassGenerator
     }
 
     /**
-     * @inheritDoc
-     * @param int[]|int $flags
+     * @param  array|string $flags
+     * @return self
      */
     public function setFlags($flags)
     {
@@ -120,7 +120,7 @@ class TraitGenerator extends ClassGenerator
     }
 
     /**
-     * @param int $flag
+     * @param  string $flag
      * @return self
      */
     public function addFlag($flag)
@@ -129,7 +129,7 @@ class TraitGenerator extends ClassGenerator
     }
 
     /**
-     * @param int $flag
+     * @param  string $flag
      * @return self
      */
     public function removeFlag($flag)
@@ -138,7 +138,8 @@ class TraitGenerator extends ClassGenerator
     }
 
     /**
-     * @inheritDoc
+     * @param  bool $isFinal
+     * @return self
      */
     public function setFinal($isFinal)
     {
@@ -146,7 +147,7 @@ class TraitGenerator extends ClassGenerator
     }
 
     /**
-     * @param ?string $extendedClass
+     * @param  string $extendedClass
      * @return self
      */
     public function setExtendedClass($extendedClass)
@@ -155,7 +156,8 @@ class TraitGenerator extends ClassGenerator
     }
 
     /**
-     * @inheritDoc
+     * @param  array $implementedInterfaces
+     * @return self
      */
     public function setImplementedInterfaces(array $implementedInterfaces)
     {
@@ -163,7 +165,8 @@ class TraitGenerator extends ClassGenerator
     }
 
     /**
-     * @inheritDoc
+     * @param  bool $isAbstract
+     * @return self
      */
     public function setAbstract($isAbstract)
     {

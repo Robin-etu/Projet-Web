@@ -1,10 +1,13 @@
+{# templates/Layouts/layout2.html.twig #}
+{% extends '/Layouts/layout1.html.twig' %}
+
 {% block body %}
     <div id="header">
-
+        {%  block header %}{% endblock %}
     </div>
 
     <div id="menu">
-        {{ render(controller('App\\Controller\\SandboxController::menuAction', {items: ['Accueil', 'Parcourir', 'Blog']})) }}
+        {{ render(controller('App\\Controller\\AccueilController::menuAction')) }}
     </div>
 
     <div id="vue">
@@ -12,6 +15,6 @@
     </div>
 
     <div id="footer">
-        <img src="">
+        {#<img src="">#}
     </div>
 {% endblock %}
