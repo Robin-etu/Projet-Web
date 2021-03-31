@@ -74,7 +74,7 @@ class __TwigTemplate_99c4156fdbe3dd831193e61d0167994c79de0f23ef6cce8a11e590ecb09
         // line 7
         echo "    </div>
 
-    <div id=\"menu\">
+    <div id=\"menu\" style=\"display: none\">
         ";
         // line 10
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\AccueilController::menuAction"));
@@ -162,7 +162,7 @@ class __TwigTemplate_99c4156fdbe3dd831193e61d0167994c79de0f23ef6cce8a11e590ecb09
         {%  block header %}{% endblock %}
     </div>
 
-    <div id=\"menu\">
+    <div id=\"menu\" style=\"display: none\">
         {{ render(controller('App\\\\Controller\\\\AccueilController::menuAction')) }}
     </div>
 

@@ -89,6 +89,7 @@ class __TwigTemplate_447c539c6a9694c6695cb05e03390c54043997cb2b4f5ed8cfaab2ccf0b
         echo "    <h1>Hello ";
         echo twig_escape_filter($this->env, (isset($context["nature"]) || array_key_exists("nature", $context) ? $context["nature"] : (function () { throw new RuntimeError('Variable "nature" does not exist.', 7, $this->source); })()), "html", null, true);
         echo "! ✅</h1>
+    <p><a href=\"#\" onclick=\"document.getElementById('menu').style.display='block'\">Menu</a></p>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -98,7 +99,7 @@ class __TwigTemplate_447c539c6a9694c6695cb05e03390c54043997cb2b4f5ed8cfaab2ccf0b
 
     }
 
-    // line 10
+    // line 11
     public function block_vue($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,14 +109,14 @@ class __TwigTemplate_447c539c6a9694c6695cb05e03390c54043997cb2b4f5ed8cfaab2ccf0b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
-        // line 11
+        // line 12
         echo "    <ul>
         ";
-        // line 12
+        // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "session", [], "any", false, false, false, 12), "flashBag", [], "any", false, false, false, 12), "get", [0 => "info"], "method", false, false, false, 12));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "session", [], "any", false, false, false, 13), "flashBag", [], "any", false, false, false, 13), "get", [0 => "info"], "method", false, false, false, 13));
         foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-            // line 13
+            // line 14
             echo "            <li>";
             echo twig_escape_filter($this->env, $context["msg"], "html", null, true);
             echo "</li>
@@ -124,7 +125,7 @@ class __TwigTemplate_447c539c6a9694c6695cb05e03390c54043997cb2b4f5ed8cfaab2ccf0b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['msg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 15
+        // line 16
         echo "    </ul>
 ";
         
@@ -147,7 +148,7 @@ class __TwigTemplate_447c539c6a9694c6695cb05e03390c54043997cb2b4f5ed8cfaab2ccf0b
 
     public function getDebugInfo()
     {
-        return array (  128 => 15,  119 => 13,  115 => 12,  112 => 11,  102 => 10,  89 => 7,  79 => 6,  60 => 4,  37 => 2,);
+        return array (  129 => 16,  120 => 14,  116 => 13,  113 => 12,  103 => 11,  89 => 7,  79 => 6,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
@@ -159,6 +160,7 @@ class __TwigTemplate_447c539c6a9694c6695cb05e03390c54043997cb2b4f5ed8cfaab2ccf0b
 
 {% block header %}
     <h1>Hello {{ nature }}! ✅</h1>
+    <p><a href=\"#\" onclick=\"document.getElementById('menu').style.display='block'\">Menu</a></p>
 {% endblock %}
 
 {% block vue %}
