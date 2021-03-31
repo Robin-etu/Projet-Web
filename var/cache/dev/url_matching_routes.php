@@ -14,6 +14,9 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'accueil_index', '_controller' => 'App\\Controller\\AccueilController::indexAction'], null, null, null, false, false, null]],
+        '/connexion' => [[['_route' => 'accueil_connexion', '_controller' => 'App\\Controller\\AccueilController::connexionAction'], null, null, null, false, false, null]],
+        '/creercompte' => [[['_route' => 'accueil_creer_compte', '_controller' => 'App\\Controller\\AccueilController::creerCompteAction'], null, null, null, false, false, null]],
+        '/deconnexion' => [[['_route' => 'accueil_deconnexion', '_controller' => 'App\\Controller\\AccueilController::deconnexionAction'], null, null, null, false, false, null]],
         '/doctrine/ajouterendur' => [[['_route' => 'doctrine_ajouterEnDur', '_controller' => 'App\\Controller\\DoctrineController::ajouterEnDurAction'], null, null, null, false, false, null]],
     ],
     [ // $regexpList

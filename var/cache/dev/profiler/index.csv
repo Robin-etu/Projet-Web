@@ -54,3 +54,15 @@ d6b6ca,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_
 c518c2,::1,GET,http://localhost/projet/public/,1617200167,,200
 fd6985,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CAccueilController%253A%253AmenuAction,1617200177,d7d76e,200
 d7d76e,::1,GET,http://localhost/projet/public/,1617200177,,200
+66d2cb,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CAccueilController%253A%253AmenuAction,1617201285,11a0e1,200
+11a0e1,::1,GET,http://localhost/projet/public/,1617201285,,200
+9c5810,::1,GET,http://localhost/projet/public/deconnexion,1617201287,eb76b6,500
+eb76b6,::1,GET,http://localhost/projet/public/deconnexion,1617201287,,500
+dc2e9e,::1,GET,http://localhost/projet/public/deconnexion,1617201321,,302
+d3b76d,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CAccueilController%253A%253AmenuAction,1617201323,7622cb,200
+7622cb,::1,GET,http://localhost/projet/public/,1617201323,,200
+579614,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CAccueilController%253A%253AmenuAction,1617201329,eecc69,200
+eecc69,::1,GET,http://localhost/projet/public/,1617201329,,200
+aea303,::1,GET,http://localhost/projet/public/deconnexion,1617201330,,302
+78101e,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CAccueilController%253A%253AmenuAction,1617201331,ca721c,200
+ca721c,::1,GET,http://localhost/projet/public/,1617201331,,200

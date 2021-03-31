@@ -16,5 +16,8 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'accueil_index' => [[], ['_controller' => 'App\\Controller\\AccueilController::indexAction'], [], [['text', '/']], [], []],
+    'accueil_connexion' => [[], ['_controller' => 'App\\Controller\\AccueilController::connexionAction'], [], [['text', '/connexion']], [], []],
+    'accueil_creer_compte' => [[], ['_controller' => 'App\\Controller\\AccueilController::creerCompteAction'], [], [['text', '/creercompte']], [], []],
+    'accueil_deconnexion' => [[], ['_controller' => 'App\\Controller\\AccueilController::deconnexionAction'], [], [['text', '/deconnexion']], [], []],
     'doctrine_ajouterEnDur' => [[], ['_controller' => 'App\\Controller\\DoctrineController::ajouterEnDurAction'], [], [['text', '/doctrine/ajouterendur']], [], []],
 ];

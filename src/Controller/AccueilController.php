@@ -98,7 +98,7 @@ class AccueilController extends AbstractController
      */
     public function connexionAction() : Response
     {
-        $this->render('accueil/connexion.html.twig');
+        return $this->render('accueil/connexion.html.twig');
     }
 
     /**
@@ -106,7 +106,7 @@ class AccueilController extends AbstractController
      */
     public function creerCompteAction() : Response
     {
-        $this->render('accueil/connexion.html.twig');
+        return $this->render('accueil/connexion.html.twig');
     }
 
     /**
@@ -116,6 +116,6 @@ class AccueilController extends AbstractController
     {
         $this->addFlash('info', 'Déconnexion réussie');
 
-        $this->redirectToRoute('accueil_index');
+        return $this->redirectToRoute('accueil_index');
     }
 }

@@ -83,7 +83,10 @@ class __TwigTemplate_60115286c773959f2815e78b8490ea0ca441b2388b38d23eb5c58ec482a
     ";
         }
         // line 19
-        echo "</ul>";
+        echo "    <li><a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_deconnexion");
+        echo "\">Deconnexion</a></li>
+</ul>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -127,6 +130,7 @@ class __TwigTemplate_60115286c773959f2815e78b8490ea0ca441b2388b38d23eb5c58ec482a
             </a>
         </li>
     {% endif %}
+    <li><a href=\"{{ path('accueil_deconnexion') }}\">Deconnexion</a></li>
 </ul>", "accueil/menu.html.twig", "C:\\wamp64\\www\\projet\\templates\\accueil\\menu.html.twig");
     }
 }
