@@ -240,3 +240,7 @@
 [2021-03-31T14:35:31.454794+00:00] doctrine.DEBUG: SELECT count(i0_.id) AS sclr_0 FROM im2021_produits i0_ [] []
 [2021-03-31T14:35:31.466356+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2021-03-31T14:35:31.560721+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"ca721c"},"request_uri":"http://localhost/projet/public/_wdt/ca721c","method":"GET"} []
+[2021-03-31T14:37:04.994571+00:00] request.INFO: Matched route "accueil_index". {"route":"accueil_index","route_parameters":{"_route":"accueil_index","_controller":"App\\Controller\\AccueilController::indexAction"},"request_uri":"http://localhost/projet/public/","method":"GET"} []
+[2021-03-31T14:37:05.035659+00:00] doctrine.DEBUG: SELECT count(i0_.id) AS sclr_0 FROM im2021_produits i0_ [] []
+[2021-03-31T14:37:05.057992+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2021-03-31T14:37:05.194556+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"3902e8"},"request_uri":"http://localhost/projet/public/_wdt/3902e8","method":"GET"} []
