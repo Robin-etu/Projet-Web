@@ -19,6 +19,7 @@ class PanierController extends AbstractController
 
     public function getPanierElements() 
     {
+        //requete de selections des elements de la table panier avec jointures
         $query= 'SELECT im2021_paniers.id,im2021_produits.libelle, im2021_produits.prix,
         SUM(im2021_paniers.quantite) AS quantite_totale,
         SUM(im2021_paniers.quantite*prix) AS prix_total
