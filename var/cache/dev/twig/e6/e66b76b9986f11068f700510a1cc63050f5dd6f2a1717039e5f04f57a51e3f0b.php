@@ -194,6 +194,6 @@ class __TwigTemplate_e8d77659c73acf5d8bb1091df98375380e7031cf0f7b253d65ce06b01e1
 </body>
 </html>
 
-", "Layouts/layout1.html.twig", "C:\\wamp64\\www\\projet\\templates\\Layouts\\layout1.html.twig");
+", "Layouts/layout1.html.twig", "C:\\wamp64\\www\\Projet-Web\\templates\\Layouts\\layout1.html.twig");
     }
 }

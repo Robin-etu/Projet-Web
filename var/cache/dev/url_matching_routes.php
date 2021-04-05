@@ -15,9 +15,19 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'accueil_index', '_controller' => 'App\\Controller\\AccueilController::indexAction'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'accueil_connexion', '_controller' => 'App\\Controller\\AccueilController::connexionAction'], null, null, null, false, false, null]],
-        '/creercompte' => [[['_route' => 'accueil_creer_compte', '_controller' => 'App\\Controller\\AccueilController::creerCompteAction'], null, null, null, false, false, null]],
+        '/accueil' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\AccueilController::accueilAction'], null, null, null, false, false, null]],
         '/deconnexion' => [[['_route' => 'accueil_deconnexion', '_controller' => 'App\\Controller\\AccueilController::deconnexionAction'], null, null, null, false, false, null]],
         '/doctrine/ajouterendur' => [[['_route' => 'doctrine_ajouterEnDur', '_controller' => 'App\\Controller\\DoctrineController::ajouterEnDurAction'], null, null, null, false, false, null]],
+        '/commanderProduit' => [[['_route' => 'commander_produit', '_controller' => 'App\\Controller\\PanierController::commanderProduitAction'], null, null, null, false, false, null]],
+        '/gererPanier' => [[['_route' => 'gerer_panier', '_controller' => 'App\\Controller\\PanierController::gererPanierAction'], null, null, null, false, false, null]],
+        '/validerPanier' => [[['_route' => 'valider_panier', '_controller' => 'App\\Controller\\PanierController::validerPanierAction'], null, null, null, false, false, null]],
+        '/commanderPanier' => [[['_route' => 'commander_panier', '_controller' => 'App\\Controller\\PanierController::commanderPanierAction'], null, null, null, false, false, null]],
+        '/viderPanier' => [[['_route' => 'vider_panier', '_controller' => 'App\\Controller\\PanierController::viderPanierAction'], null, null, null, false, false, null]],
+        '/addProduit' => [[['_route' => 'ajouter_produit', '_controller' => 'App\\Controller\\ProduitController::ajouterProduitAction'], null, null, null, false, false, null]],
+        '/listerMagasin' => [[['_route' => 'lister_magasin', '_controller' => 'App\\Controller\\ProduitController::listerMagasinAction'], null, null, null, false, false, null]],
+        '/creercompte' => [[['_route' => 'accueil_creer_compte', '_controller' => 'App\\Controller\\UtilisateurController::creerCompteAction'], null, null, null, false, false, null]],
+        '/editer' => [[['_route' => 'editer_profil', '_controller' => 'App\\Controller\\UtilisateurController::editerProfilAction'], null, null, null, false, false, null]],
+        '/gererUtilisateur' => [[['_route' => 'gerer_utilisateur', '_controller' => 'App\\Controller\\UtilisateurController::gererUtilisateurAction'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -36,6 +46,7 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/supprimerElementPanier/([^/]++)(*:201)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -45,8 +56,9 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        201 => [
+            [['_route' => 'supprimer_element_panier', '_controller' => 'App\\Controller\\PanierController::supprimerElementPanierAction'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

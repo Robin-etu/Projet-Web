@@ -3,9 +3,16 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Utilisateur;
+use App\Form\CreerCompteType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+
 
 class AccueilController extends AbstractController
 {
@@ -60,8 +67,8 @@ class AccueilController extends AbstractController
         if ($auth == 0)
         {
             return $this->render('accueil/menu.html.twig', ['admin' => false, 'produits'=>$totalProduits,
-                'routes' => ['connexion', 'creer_compte'],
-                'onglets' => ['Se connecter', 'Créer un compte']]);
+                'routes' => ['accueil_connexion', 'accueil_creer_compte','accueil'],
+                'onglets' => ['Se connecter', 'Créer un compte','page d\'accueil']]);
         }
         else if ($auth > 0)
         {
@@ -71,8 +78,8 @@ class AccueilController extends AbstractController
             if (is_null($user))
             {
                 return $this->render('accueil/menu.html.twig', ['admin' => false, 'produits'=>$totalProduits,
-                    'routes' => ['accueil_connexion', 'accueil_creer_compte'],
-                    'onglets' => ['Se connecter', 'Créer un compte']]);
+                    'routes' => ['accueil_connexion', 'accueil_creer_compte','accueil'],
+                    'onglets' => ['Se connecter', 'Créer un compte','page d\'accueil']]);
             }
             else if ($user->getIsAdmin())
             {
@@ -101,21 +108,30 @@ class AccueilController extends AbstractController
         return $this->render('accueil/connexion.html.twig');
     }
 
-    /**
-     * @Route("/creercompte", name="accueil_creer_compte")
+     /**
+     * @Route("/accueil", name="accueil")
      */
-    public function creerCompteAction() : Response
+    public function accueilAction() : Response
     {
-        return $this->render('accueil/connexion.html.twig');
+        return $this->render('accueil/accueil.html.twig');
     }
+
+    
 
     /**
      * @Route("/deconnexion", name="accueil_deconnexion")
      */
     public function deconnexionAction() : Response
-    {
+    {        
+        $em = $this->getDoctrine()->getManager();
+        $utilisateurRepository = $em->getRepository('App:Utilisateur');
+        $id = $this->getParameter('auth');
+        $utilisateur = $utilisateurRepository->find($id);
+        if($utilisateur->getIsAdmin())
+            $nature='administrateur';
+        else
+            $nature='client';
         $this->addFlash('info', 'Déconnexion réussie');
-
-        return $this->redirectToRoute('accueil_index');
+        return $this->render('accueil/index.html.twig', ['nature'=>$nature]);
     }
 }

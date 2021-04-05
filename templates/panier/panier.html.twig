@@ -1,0 +1,45 @@
+{# templates/panier/list.html.twig #}
+{% extends '/Layouts/layout2.html.twig' %}
+
+{% block title %} Contenu de votre panier{% endblock %}
+
+
+{% block body %}
+    <h1> CONTENU DE VOTRE PANIER </h1>
+    <form method="post" action="{{path('commander_panier')}}">
+       <table>
+        <tr>
+            <th>Libellé</th>
+            <th>Prix U.</th>
+            <th>quantite C.</th>
+            <th>Prix T.</th>
+            <th> Actions </th>
+        </tr>
+     {% for panier in  paniers %}        
+        <tr>
+            <td>{{ panier.libelle }}</td>
+            <td>{{ panier.prix }}</td>
+            <td>{{ panier.quantite_totale }}</td>
+            <td>{{ panier.prix_total }}</td>
+        <td> <button type="button" value="Supprimer"  href = {{path('supprimer_element_panier',{id: panier.id })}} />
+             suppimer
+             </button>
+        </td>
+        </tr>
+        
+     {% endfor %}
+     <tr><td colspan="4">
+            <input type="button" value="Commander"  href = {{path('commander_panier')}} />
+             
+        </td>
+
+         <td colspan="2">
+           <button type="button" value="Vider"  href = {{path('vider_panier')}} />
+             Vider
+             </button>
+        </td>        
+     </tr>
+        </table>
+        </form>
+
+{% endblock %}

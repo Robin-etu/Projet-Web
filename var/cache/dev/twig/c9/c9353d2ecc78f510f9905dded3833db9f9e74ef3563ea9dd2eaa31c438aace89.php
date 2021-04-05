@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /Layouts/layout2.html.twig */
+/* Layouts/layout2.html.twig */
 class __TwigTemplate_99c4156fdbe3dd831193e61d0167994c79de0f23ef6cce8a11e590ecb09df99d extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_99c4156fdbe3dd831193e61d0167994c79de0f23ef6cce8a11e590ecb09
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/Layouts/layout2.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Layouts/layout2.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/Layouts/layout2.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Layouts/layout2.html.twig"));
 
-        $this->parent = $this->loadTemplate("/Layouts/layout1.html.twig", "/Layouts/layout2.html.twig", 2);
+        $this->parent = $this->loadTemplate("/Layouts/layout1.html.twig", "Layouts/layout2.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -139,7 +139,7 @@ class __TwigTemplate_99c4156fdbe3dd831193e61d0167994c79de0f23ef6cce8a11e590ecb09
 
     public function getTemplateName()
     {
-        return "/Layouts/layout2.html.twig";
+        return "Layouts/layout2.html.twig";
     }
 
     public function isTraitable()
@@ -173,6 +173,6 @@ class __TwigTemplate_99c4156fdbe3dd831193e61d0167994c79de0f23ef6cce8a11e590ecb09
     <div id=\"footer\">
         {#<img src=\"\">#}
     </div>
-{% endblock %}", "/Layouts/layout2.html.twig", "C:\\wamp64\\www\\projet\\templates\\Layouts\\layout2.html.twig");
+{% endblock %}", "Layouts/layout2.html.twig", "C:\\wamp64\\www\\Projet-Web\\templates\\Layouts\\layout2.html.twig");
     }
 }

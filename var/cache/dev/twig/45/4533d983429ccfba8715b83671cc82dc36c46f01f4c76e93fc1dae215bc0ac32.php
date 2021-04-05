@@ -71,6 +71,6 @@ class __TwigTemplate_a815b807bdfc727e86b345e04b4405e3341709dbb76726a63a1dfdb835e
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.html.twig\" %}
-", "@email/default/notification/body.html.twig", "C:\\wamp64\\www\\projet\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\default\\notification\\body.html.twig");
+", "@email/default/notification/body.html.twig", "C:\\wamp64\\www\\Projet-Web\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\default\\notification\\body.html.twig");
     }
 }

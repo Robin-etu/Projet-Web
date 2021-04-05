@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Panier;
+use App\Entity\Produit;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -47,4 +48,33 @@ class PanierRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findByQuantiteTotale(){
+        $em = $this->getDoctrine()->getManager();
+        $query= 'SELECT im2021_produits.libelle, im2021_produits.prix,
+                SUM(im2021_paniers.quantite) AS quantite_totale,
+                SUM(im2021_paniers.quantite*prix) AS prix_total
+                FROM im2021_paniers, im2021_produits
+                WHERE im2021_produits.id = im2021_paniers.id;';
+        $statement = $em->getConnection()->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll();
+                   
+    }
+
+    public function findByPanierElements() : Response
+    {
+        $query= 'SELECT im2021_paniers.id,im2021_produits.libelle, im2021_produits.prix,
+        SUM(im2021_paniers.quantite) AS quantite_totale,
+        SUM(im2021_paniers.quantite*prix) AS prix_total
+        FROM im2021_paniers, im2021_produits
+        WHERE im2021_produits.id = im2021_paniers.id_produit
+        GROUP BY im2021_produits.libelle;';
+
+        $statement = $em->getConnection()->prepare($query);
+        $statement->execute();
+        $paniers = $statement->fetchAll();
+
+        return $paniers;
+    }
 }

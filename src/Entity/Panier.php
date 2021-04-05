@@ -42,14 +42,14 @@ class Panier
         return $this->id;
     }
 
-    public function getUtilisateurs(): ?Utilisateur
+    public function getUtilisateur(): ?Utilisateur
     {
         return $this->utilisateur;
     }
 
-    public function setUtilisateurs(?Utilisateur $utilisateurs): self
+    public function setUtilisateur(?Utilisateur $utilisateur): self
     {
-        $this->utilisateurs = $utilisateurs;
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

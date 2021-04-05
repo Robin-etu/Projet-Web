@@ -40,10 +40,10 @@ class __TwigTemplate_60115286c773959f2815e78b8490ea0ca441b2388b38d23eb5c58ec482a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "accueil/menu.html.twig"));
 
         // line 2
-        echo "<p>Nombre de produits disponibles : ";
+        echo " <p>Nombre de produits disponibles : ";
         echo twig_escape_filter($this->env, (isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 2, $this->source); })()), "html", null, true);
         echo "</p>
-<ul>
+ <ul>
     ";
         // line 4
         $context["i"] = 0;
@@ -53,14 +53,15 @@ class __TwigTemplate_60115286c773959f2815e78b8490ea0ca441b2388b38d23eb5c58ec482a
         $context['_seq'] = twig_ensure_traversable((isset($context["onglets"]) || array_key_exists("onglets", $context) ? $context["onglets"] : (function () { throw new RuntimeError('Variable "onglets" does not exist.', 5, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["onglet"]) {
             // line 6
-            echo "        <li>";
+            echo "        <li> <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, (isset($context["routes"]) || array_key_exists("routes", $context) ? $context["routes"] : (function () { throw new RuntimeError('Variable "routes" does not exist.', 6, $this->source); })()), (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 6, $this->source); })()), [], "array", false, false, false, 6));
+            echo "\">
+                ";
             // line 7
-            echo "                ";
             echo twig_escape_filter($this->env, $context["onglet"], "html", null, true);
             echo "
-            ";
-            // line 9
-            echo "        </li>
+             </a>
+        </li>
     ";
             // line 10
             $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 10, $this->source); })()) + 1);
@@ -104,19 +105,19 @@ class __TwigTemplate_60115286c773959f2815e78b8490ea0ca441b2388b38d23eb5c58ec482a
 
     public function getDebugInfo()
     {
-        return array (  86 => 19,  79 => 14,  77 => 13,  74 => 12,  68 => 11,  66 => 10,  63 => 9,  58 => 7,  56 => 6,  51 => 5,  49 => 4,  43 => 2,);
+        return array (  87 => 19,  80 => 14,  78 => 13,  75 => 12,  69 => 11,  67 => 10,  61 => 7,  56 => 6,  51 => 5,  49 => 4,  43 => 2,);
     }
 
     public function getSourceContext()
     {
         return new Source("{# templates/accueil/menu.html.twig #}
-<p>Nombre de produits disponibles : {{ produits }}</p>
-<ul>
+ <p>Nombre de produits disponibles : {{ produits }}</p>
+ <ul>
     {% set i = 0 %}
     {% for onglet in onglets %}
-        <li>{#<a href=\"{{ path(routes[i]) }}\">#}
+        <li> <a href=\"{{ path(routes[i]) }}\">
                 {{ onglet }}
-            {#</a>#}
+             </a>
         </li>
     {% set i = i+1 %}
     {% endfor %}
@@ -127,6 +128,6 @@ class __TwigTemplate_60115286c773959f2815e78b8490ea0ca441b2388b38d23eb5c58ec482a
             </a>
         </li>
     {% endif %}
-</ul>", "accueil/menu.html.twig", "C:\\wamp64\\www\\projet\\templates\\accueil\\menu.html.twig");
+</ul>", "accueil/menu.html.twig", "C:\\wamp64\\www\\Projet-Web\\templates\\accueil\\menu.html.twig");
     }
 }

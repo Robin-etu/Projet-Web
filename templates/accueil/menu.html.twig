@@ -1,11 +1,11 @@
 {# templates/accueil/menu.html.twig #}
-<p>Nombre de produits disponibles : {{ produits }}</p>
-<ul>
+ <p>Nombre de produits disponibles : {{ produits }}</p>
+ <ul>
     {% set i = 0 %}
     {% for onglet in onglets %}
-        <li>{#<a href="{{ path(routes[i]) }}">#}
+        <li> <a href="{{ path(routes[i]) }}">
                 {{ onglet }}
-            {#</a>#}
+             </a>
         </li>
     {% set i = i+1 %}
     {% endfor %}

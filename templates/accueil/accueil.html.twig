@@ -1,0 +1,17 @@
+{# templates/accueil/index.html.twig #}
+{% extends '/Layouts/layout2.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block header %}
+    <h1>Bienvenue {{ nature| default('anonyme')}}! ✅</h1>
+    
+{% endblock %}
+
+{% block vue %}
+    <ul>
+        {% for msg in app.session.flashBag.get('info') %}
+            <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

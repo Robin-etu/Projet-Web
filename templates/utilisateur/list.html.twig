@@ -1,0 +1,36 @@
+{# templates/utilisateur/list.html.twig #}
+{% extends '/Layouts/layout2.html.twig' %}
+
+{% block title %} Liste des produits en magasin {% endblock %}
+
+
+{% block body %}
+       <table>
+        <tr>
+            <th>login</th>
+            <th>mot de passe</th>
+            <th>nom</th>
+            <th>prenom</th>
+            <th>date de naissance</th>
+            <th>Statut</th>
+            <th>action</th>
+        </tr>
+     {% for utilisateur in  utilisateurs %}        
+        <tr>
+            <td>{{ utilisateur.login}}</td>
+            <td>{{ utilisateur.motDePasse }}</td>
+            <td>{{ utilisateur.nom }}</td>
+            <td>{{ utilisateur.prenom }}</td>
+            <td>{{ utilisateur.anniversaire|date("d/M/Y") }}</td>
+            {% if utilisateur.isAdmin %}
+            <td> Administrateur </td>
+            {% else %}
+            <td>Client</td>
+            {% endif %}
+             <td> <input type="button" value="Supprimer" /> </td>
+
+        </tr>
+        
+     {% endfor %}
+        <table>
+{% endblock %}

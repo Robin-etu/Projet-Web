@@ -170,6 +170,6 @@ class __TwigTemplate_447c539c6a9694c6695cb05e03390c54043997cb2b4f5ed8cfaab2ccf0b
         {% endfor %}
     </ul>
 {% endblock %}
-", "accueil/index.html.twig", "C:\\wamp64\\www\\projet\\templates\\accueil\\index.html.twig");
+", "accueil/index.html.twig", "C:\\wamp64\\www\\Projet-Web\\templates\\accueil\\index.html.twig");
     }
 }
