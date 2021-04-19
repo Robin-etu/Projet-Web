@@ -27,7 +27,9 @@
             {% else %}
             <td>Client</td>
             {% endif %}
-             <td> <input type="button" value="Supprimer" /> </td>
+             <td> <button type="button" value="Supprimer">  <a href = {{ path('supprimer_utilisateur',{id: utilisateur.id }) }} /> 
+             suppimer
+             </button> </td>
 
         </tr>
         

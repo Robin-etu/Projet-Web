@@ -121,10 +121,10 @@ class __TwigTemplate_af24b54eec52820c48595200a843a4a7fff3f93a4262486337285a6a638
             // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["panier"], "prix_total", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
-        <td> <button type=\"button\" value=\"Supprimer\"  href = ";
+        <td> <button type=\"button\" value=\"Supprimer\">  <a href = ";
             // line 24
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("supprimer_element_panier", ["id" => twig_get_attribute($this->env, $this->source, $context["panier"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo " />
+            echo " /> 
              suppimer
              </button>
         </td>
@@ -137,20 +137,24 @@ class __TwigTemplate_af24b54eec52820c48595200a843a4a7fff3f93a4262486337285a6a638
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 31
         echo "     <tr><td colspan=\"4\">
-            <input type=\"button\" value=\"Commander\"  href = ";
-        // line 32
+
+           <button type=\"button\" value=\"Commander\"> <a href = ";
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commander_panier");
         echo " />
-             
+             Commander
+            </button>
+
+               
         </td>
 
          <td colspan=\"2\">
-           <button type=\"button\" value=\"Vider\"  href = ";
-        // line 37
+           <button type=\"button\" value=\"Vider\"> <a href = ";
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vider_panier");
         echo " />
              Vider
-             </button>
+            </button>
         </td>        
      </tr>
         </table>
@@ -177,7 +181,7 @@ class __TwigTemplate_af24b54eec52820c48595200a843a4a7fff3f93a4262486337285a6a638
 
     public function getDebugInfo()
     {
-        return array (  150 => 37,  142 => 32,  139 => 31,  126 => 24,  122 => 23,  118 => 22,  114 => 21,  110 => 20,  103 => 18,  91 => 9,  88 => 8,  78 => 7,  59 => 4,  36 => 2,);
+        return array (  154 => 41,  143 => 33,  139 => 31,  126 => 24,  122 => 23,  118 => 22,  114 => 21,  110 => 20,  103 => 18,  91 => 9,  88 => 8,  78 => 7,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -205,7 +209,7 @@ class __TwigTemplate_af24b54eec52820c48595200a843a4a7fff3f93a4262486337285a6a638
             <td>{{ panier.prix }}</td>
             <td>{{ panier.quantite_totale }}</td>
             <td>{{ panier.prix_total }}</td>
-        <td> <button type=\"button\" value=\"Supprimer\"  href = {{path('supprimer_element_panier',{id: panier.id })}} />
+        <td> <button type=\"button\" value=\"Supprimer\">  <a href = {{ path('supprimer_element_panier',{id: panier.id }) }} /> 
              suppimer
              </button>
         </td>
@@ -213,14 +217,18 @@ class __TwigTemplate_af24b54eec52820c48595200a843a4a7fff3f93a4262486337285a6a638
         
      {% endfor %}
      <tr><td colspan=\"4\">
-            <input type=\"button\" value=\"Commander\"  href = {{path('commander_panier')}} />
-             
+
+           <button type=\"button\" value=\"Commander\"> <a href = {{path('commander_panier')}} />
+             Commander
+            </button>
+
+               
         </td>
 
          <td colspan=\"2\">
-           <button type=\"button\" value=\"Vider\"  href = {{path('vider_panier')}} />
+           <button type=\"button\" value=\"Vider\"> <a href = {{path('vider_panier')}} />
              Vider
-             </button>
+            </button>
         </td>        
      </tr>
         </table>

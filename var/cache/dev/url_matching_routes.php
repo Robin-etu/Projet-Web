@@ -46,7 +46,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/supprimerElementPanier/([^/]++)(*:201)'
+                .'|/supprimer(?'
+                    .'|ElementPanier/([^/]++)(*:204)'
+                    .'|Utilisateur/([^/]++)(*:232)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -57,8 +60,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        201 => [
-            [['_route' => 'supprimer_element_panier', '_controller' => 'App\\Controller\\PanierController::supprimerElementPanierAction'], ['id'], null, null, false, true, null],
+        204 => [[['_route' => 'supprimer_element_panier', '_controller' => 'App\\Controller\\PanierController::supprimerElementPanierAction'], ['id'], null, null, false, true, null]],
+        232 => [
+            [['_route' => 'supprimer_utilisateur', '_controller' => 'App\\Controller\\UtilisateurController::supprimerUtilisateurAction'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -21,7 +21,7 @@
             <td>{{ panier.prix }}</td>
             <td>{{ panier.quantite_totale }}</td>
             <td>{{ panier.prix_total }}</td>
-        <td> <button type="button" value="Supprimer"  href = {{path('supprimer_element_panier',{id: panier.id })}} />
+        <td> <button type="button" value="Supprimer">  <a href = {{ path('supprimer_element_panier',{id: panier.id }) }} /> 
              suppimer
              </button>
         </td>
@@ -29,14 +29,18 @@
         
      {% endfor %}
      <tr><td colspan="4">
-            <input type="button" value="Commander"  href = {{path('commander_panier')}} />
-             
+
+           <button type="button" value="Commander"> <a href = {{path('commander_panier')}} />
+             Commander
+            </button>
+
+               
         </td>
 
          <td colspan="2">
-           <button type="button" value="Vider"  href = {{path('vider_panier')}} />
+           <button type="button" value="Vider"> <a href = {{path('vider_panier')}} />
              Vider
-             </button>
+            </button>
         </td>        
      </tr>
         </table>

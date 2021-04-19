@@ -58,7 +58,7 @@ class UtilisateurController extends AbstractController
         $utilisateur = $utilisateurRepository->find($id);
         $form = $this->createForm(CreerCompteType::class, $utilisateur);
         $form->add('Modifier', SubmitType::class, ['label' => 'Modifier']);
-        $form->add('Annuler', ResetType::class, ['label' => 'Annuler']);
+           
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
@@ -70,11 +70,11 @@ class UtilisateurController extends AbstractController
         }
         else if ($form->isSubmitted())
         {
-            $this->addFlash('info', 'erreur lors ded la modification');
+            $this->addFlash('info', 'erreur lors de la modification');
             $args = array('creationCompteForm' => $form->createView());
             return $this->render('accueil/editer.html.twig', $args);
         }
-            
+   
         $args = array('creationCompteForm' => $form->createView());
         return $this->render('accueil/editer.html.twig', $args);
         
@@ -89,5 +89,20 @@ class UtilisateurController extends AbstractController
         $utilisateurRepository = $em->getRepository('App\Entity\Utilisateur');
         $utilisateurs=$utilisateurRepository->findAll();
         return $this->render('utilisateur/list.html.twig',['utilisateurs'=>$utilisateurs]);
+    }
+
+
+    /**
+     * @Route("/supprimerUtilisateur/{id}", name="supprimer_utilisateur")
+     */
+    public function supprimerUtilisateurAction(Request $request,$id) : Response
+    {
+            $em = $this->getDoctrine()->getManager();
+            $utilisateurRepository = $em->getRepository('App\Entity\Utilisateur');
+            $utilisateur = $utilisateurRepository->findOneById($id);            
+            $em->remove($utilisateur);
+            $em->flush();
+            $utilisateurs=$utilisateurRepository->findAll();
+            return $this->render('utilisateur/list.html.twig',['utilisateurs'=>$utilisateurs]);
     }
 }

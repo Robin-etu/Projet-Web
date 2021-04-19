@@ -31,4 +31,5 @@ return [
     'accueil_creer_compte' => [[], ['_controller' => 'App\\Controller\\UtilisateurController::creerCompteAction'], [], [['text', '/creercompte']], [], []],
     'editer_profil' => [[], ['_controller' => 'App\\Controller\\UtilisateurController::editerProfilAction'], [], [['text', '/editer']], [], []],
     'gerer_utilisateur' => [[], ['_controller' => 'App\\Controller\\UtilisateurController::gererUtilisateurAction'], [], [['text', '/gererUtilisateur']], [], []],
+    'supprimer_utilisateur' => [['id'], ['_controller' => 'App\\Controller\\UtilisateurController::supprimerUtilisateurAction'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/supprimerUtilisateur']], [], []],
 ];

@@ -134,7 +134,11 @@ class __TwigTemplate_2f5bc605e6eca673d150f1a82051c0e16c8a0b701926d5c35853b583590
             ";
             }
             // line 30
-            echo "             <td> <input type=\"button\" value=\"Supprimer\" /> </td>
+            echo "             <td> <button type=\"button\" value=\"Supprimer\">  <a href = ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("supprimer_utilisateur", ["id" => twig_get_attribute($this->env, $this->source, $context["utilisateur"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            echo " /> 
+             suppimer
+             </button> </td>
 
         </tr>
         
@@ -143,7 +147,7 @@ class __TwigTemplate_2f5bc605e6eca673d150f1a82051c0e16c8a0b701926d5c35853b583590
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['utilisateur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 37
         echo "        <table>
 ";
         
@@ -166,7 +170,7 @@ class __TwigTemplate_2f5bc605e6eca673d150f1a82051c0e16c8a0b701926d5c35853b583590
 
     public function getDebugInfo()
     {
-        return array (  147 => 35,  137 => 30,  133 => 28,  129 => 26,  127 => 25,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  107 => 20,  100 => 18,  88 => 8,  78 => 7,  59 => 4,  36 => 2,);
+        return array (  151 => 37,  137 => 30,  133 => 28,  129 => 26,  127 => 25,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  107 => 20,  100 => 18,  88 => 8,  78 => 7,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -200,7 +204,9 @@ class __TwigTemplate_2f5bc605e6eca673d150f1a82051c0e16c8a0b701926d5c35853b583590
             {% else %}
             <td>Client</td>
             {% endif %}
-             <td> <input type=\"button\" value=\"Supprimer\" /> </td>
+             <td> <button type=\"button\" value=\"Supprimer\">  <a href = {{ path('supprimer_utilisateur',{id: utilisateur.id }) }} /> 
+             suppimer
+             </button> </td>
 
         </tr>
         

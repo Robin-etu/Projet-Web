@@ -4,7 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    auth: 2 # Paramètre grobal qui gère l'authentification sur le site.
+    auth: 3 # Paramètre grobal qui gère l'authentification sur le site.
             # Valeur 0 pour une personne non connectée.
             # Valeur supérieure à 0 pour une personne connectée.
 services:

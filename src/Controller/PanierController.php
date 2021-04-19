@@ -58,7 +58,7 @@ class PanierController extends AbstractController
                     $produit->setQuantite($produit->getQuantite() - $value);
                   
                         if($value!=0){
-                            /*$utilisateurExist = $panierRepository->createQueryBuilder('a')
+                            $utilisateurExist = $panierRepository->createQueryBuilder('a')
                             ->select('count(a.utilisateur)')
                             ->andWhere('a.utilisateur = :user')
                             ->andWhere('a.produit = :produit')
@@ -68,24 +68,24 @@ class PanierController extends AbstractController
                             ->getSingleScalarResult();
 
                             if($utilisateurExist>=1){
-                                $panier = $panierRepository->findByIdUtilisateur();
+                                $panier = $panierRepository->findOneByUtilisateur(array('user' =>$idUtilisateur));
                                 $panier->setQuantite($panier->getQuantite() + $value);
                                 $em->persist($produit);
                                 $em->persist($panier);
                                 
-                            }*/
-                           // else{
+                            }
+                            else{
                                 $panier = new Panier();
                                 $panier->setProduit($produit);
                                 $panier->setUtilisateur($utilisateur);
                                 $panier->setQuantite($value);
                                 $em->persist($produit);
                                 $em->persist($panier);
-                           // }    
+                            }    
                         }
                  $em->flush();
             }
-            $produits=$produitRepository->findAll();
+            
                 
         
            // $paniers=$panierRepository->findByQuantiteTotale();            
@@ -93,6 +93,8 @@ class PanierController extends AbstractController
             $prix = $request->request->get("prix");
             $quantite = $request->request->get("quantite");*/
          }
+
+         $produits=$produitRepository->findAll();
         return $this->render('produit/list.html.twig',['produits'=>$produits]);
     }
     
@@ -126,6 +128,7 @@ class PanierController extends AbstractController
             foreach($posts['qteCommandee'] as $key => $value){
                 $produit = $produitRepository->find($key);
                 $produit->setQuantite($produit->getQuantite() - $value);
+
                 $panier = new Panier();
                 $panier->setProduit($produit);
                 $panier->setUtilisateur($utilisateur);
@@ -154,13 +157,16 @@ class PanierController extends AbstractController
      */
     public function supprimerElementPanierAction(Request $request,$id) : Response
     {
-
+            $em = $this->getDoctrine()->getManager();
             $panierRepository = $em->getRepository('App\Entity\Panier');
-            $idPanier = $this->getParameter('id');
-            $panier = $panierRepository->find($idPanier);
+            $produitRepository = $em->getRepository('App\Entity\Produit'); 
+            $panier = $panierRepository->findOneById($id);
+            $idProduit = $panier->getProduit();
+            $produit = $produitRepository->findOneById($idProduit);
+            $produit->setQuantite($produit->getQuantite() + $panier->getQuantite());
+
             $em->remove($panier);
             $em->flush();
-
             $paniers = $this->getPanierElements();
             return $this->render('panier/panier.html.twig',['paniers'=>$paniers]);
     }
@@ -168,16 +174,16 @@ class PanierController extends AbstractController
     /**
      * @Route("/commanderPanier", name="commander_panier")
      */
-    public function commanderPanierAction(Request $request) : Response
-    {
-        $query='TRUNCATE TABLE \'im2021_paniers\';';
+    public function commanderPanierAction(Request $request)
+       {   
+        $idUtilisateur = $this->getParameter('auth');
+        $query='DELETE FROM  \'im2021_paniers\' where id_utilisateur= '.$idUtilisateur.';';
 
         $em = $this->getDoctrine()->getManager();
         $statement = $em->getConnection()->prepare($query);
         $statement->execute();
-        $paniers = $statement->fetchAll();
-
-        return $paniers;
+        $paniers = $this->getPanierElements();
+        return $this->render('panier/panier.html.twig',['paniers'=>$paniers]);
     }
 
     /**
@@ -185,6 +191,28 @@ class PanierController extends AbstractController
      */
     public function viderPanierAction(Request $request) : Response
     {
+        $em = $this->getDoctrine()->getManager();
+        $panierRepository = $em->getRepository('App\Entity\Panier');
+        $produitRepository = $em->getRepository('App\Entity\Produit'); 
+        $paniers = $panierRepository->findAll();
+
+        foreach($paniers as $panier)
+        {
+            $idProduit = $panier->getProduit();
+            $produit = $produitRepository->findOneById($idProduit);
+            $produit->setQuantite($produit->getQuantite() + $panier->getQuantite());
+            $em->persist($produit);
+        }
+
+            $em->flush();
+
+        $idUtilisateur = $this->getParameter('auth');
+        $query='DELETE FROM  \'im2021_paniers\' where id_utilisateur= '.$idUtilisateur.';';
+        
+        $statement = $em->getConnection()->prepare($query);
+        $statement->execute();
+        $paniers = $this->getPanierElements();
+        return $this->render('panier/panier.html.twig',['paniers'=>$paniers]);
        
     }
 }
